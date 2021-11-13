@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import { Table } from 'semantic-ui-react';
+
 import { useSelector,useDispatch} from "react-redux";
 import { useHistory } from "react-router";
 import { Rating } from 'semantic-ui-react'
@@ -6,7 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { setSelectedcourses } from './Products/ProductActions';
 
 
-const Profile = () => {
+const ProductDetails = () => {
     const history = useHistory()
     const dispatch = useDispatch();
     const coursesstate = useSelector((state) => state.ProductReducers); 
@@ -31,15 +33,21 @@ return()=>{
                 </i> {selectedProduct.description}</a></div></div>
                 Rate your Product:
                 <Rating maxRating={5} defaultRating={0} icon='star' size='small' /><br/><br/><br/>
-                <div><button class="ui fluid button" onClick={() => history.goBack()}>SEARCH MORE PRODUCTS</button></div>
+                <div><button class="ui fluid button" onClick={() => history.goBack()}>Continue Shopping</button></div>
                 
                 Added Successfully.
+                <Table><td>
                 <div><div role="list" class="ui huge divided middle aligned list"><div role="listitem" class="item fade visible transition">
                         <img src={selectedProduct.image} class="ui avatar image"/>
-                    <div class="content"><div class="header">YOUR CART</div></div></div><div role="listitem" class="item fade visible transition">
-                       </div></div></div>
+                    <div class="content"><div class="header">YOUR CART </div></div></div><div role="listitem" class="item fade visible transition">
+                       </div></div></div></td>
+                       <td>
+
+        <img src={require("../images/cart.jpg").default } height='50px' width='50px' />
+        </td>
+        </Table>
 </>
     )
 }
     
-export default Profile
+export default ProductDetails;

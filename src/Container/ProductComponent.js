@@ -38,7 +38,7 @@ const handleOpenCourses = (data) => {
                             <div>{data.title}</div>
                             <div>{data.description}</div>
                           
-                            <div> <Button  onClick={() => handleOpenCourses(data)} animated  basic color='Orange' content='Black' >
+                            <div> <Button  onClick={() => handleOpenCourses(data)} animated  content='Black' >
       <Button.Content visible>  ADD TO CART </Button.Content>
       <Button.Content hidden>
         <Icon name='arrow right' />
